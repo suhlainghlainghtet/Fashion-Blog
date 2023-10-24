@@ -1,10 +1,14 @@
 import "./App.css";
+import NavaBar from "./components/navaBar/NavaBar";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl  font-bold ">Hello World........</h1>
-    </div>
+    <>
+      <NavaBar />
+      <Home />
+      {/* <SinglePost /> */}
+    </>
   );
 }
 
