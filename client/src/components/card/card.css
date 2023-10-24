@@ -1,0 +1,22 @@
+.card_boxshadow {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.margin_block {
+  margin-block: 1.2rem;
+}
+.text_overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-height: 24px;
+}
+.button_animation i {
+  transition: transform 0.3s;
+}
+.button_animation:hover i {
+  transform: translateX(0.25rem);
+}
