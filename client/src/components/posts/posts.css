@@ -1,0 +1,6 @@
+.social_animation {
+  transition: transform 0.3s;
+}
+.social_animation:hover {
+  transform: translateY(-7px);
+}
