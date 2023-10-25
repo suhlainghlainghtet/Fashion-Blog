@@ -23,7 +23,6 @@ export default {
         "pure-orange": "#ff9b00",
         "dark-blue": "#1C1259",
         "light-gray": "#CACAEA",
-        "dark-pink": "#EE4266",
         romantic: "#FFD2BC ",
         "dark-gray": "#444",
       },
@@ -36,3 +35,4 @@ export default {
   },
   plugins: [],
 };
+// "dark-pink": "#EE4266",
