@@ -1,13 +1,16 @@
 import "./App.css";
 import NavaBar from "./components/navaBar/NavaBar";
-import Home from "./pages/home/Home";
+import CreatePost from "./pages/write/CreatePost";
+// import SinglePost from "./components/singlePost/SinglePost";
+// import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
       <NavaBar />
-      <Home />
+      {/* <Home /> */}
       {/* <SinglePost /> */}
+      <CreatePost />
     </>
   );
 }
