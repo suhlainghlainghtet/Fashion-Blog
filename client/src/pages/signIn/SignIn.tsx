@@ -1,14 +1,14 @@
-import "./logout.css";
-const Logout = () => {
+import "./signin.css";
+const SignIn = () => {
   return (
     <div className="pt-[5rem] 360:pt-0 bg_img flex flex-col justify-center items-center ">
       <span
-        className="mb-4 360:mb-5 text-[1.5rem] 360:text-[1.7rem] lg:text-[2rem] 
+        className="mb-4 360:mb-5 2xl:mb-6 text-[1.5rem] 360:text-[1.7rem] lg:text-[2rem] 2xl:text-[2.3rem]
       font-navItemsForfont  text-dark-blue font-bold tracking-[0.05rem] select-none"
       >
         Welcome Back!
       </span>
-      <form className="flex flex-col gap-y-[1rem] 360:gap-y-[1.8rem] lg:gap-y-[2rem]">
+      <form className="flex flex-col gap-y-[1rem] 360:gap-y-[1.8rem] lg:gap-y-[2rem] 3xl:gap-y-[2.5rem]">
         <div className="relative">
           <label htmlFor="email">
             <i
@@ -64,4 +64,4 @@ const Logout = () => {
     </div>
   );
 };
-export default Logout;
+export default SignIn;

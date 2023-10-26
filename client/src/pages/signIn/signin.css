@@ -1,0 +1,8 @@
+.bg_img {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.4)),
+    url("../../assets/loginCoverImg1.jpg") no-repeat;
+
+  background-size: cover;
+  height: calc(100vh - 67px);
+}
