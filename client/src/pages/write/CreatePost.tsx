@@ -2,7 +2,7 @@ import cardImg7 from "../../assets/cardImg7.jpg";
 const CreatePost = () => {
   return (
     <div
-      className="pt-[5rem] md:pt-[5.5rem] xl:pt-[6.5rem] pb-[3rem] mx-[1rem]
+      className="pt-[1.5rem] md:pt-[2.3rem] lg:pt-[2.5rem] pb-[3rem] mx-[1rem]
      md:mx-[3rem] lg:mx-[7.5rem] xl:mx-[8.5rem] 2xl:mx-[11rem] 3xl:mx-[12.5rem]"
     >
       <img

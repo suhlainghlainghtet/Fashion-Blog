@@ -18,8 +18,8 @@ export default function NavaBar() {
     <div
       className={
         scroll
-          ? "text-black fixed top-0 z-[999]  w-full  mx-auto h-auto flex justify-evenly items-center bg-white shadow"
-          : "text-black fixed top-0 z-[999]  w-full  mx-auto h-auto flex justify-evenly  items-center  "
+          ? "text-black sticky z-[999] top-0  w-full  mx-auto h-50px flex justify-evenly items-center bg-white shadow"
+          : "text-black sticky z-[999] top-0   w-full  mx-auto h-50px flex justify-evenly  items-center  "
       }
     >
       <h1 className=" hidden md:flex text-pure-orange font-fontforWebbly cursor-default font-bold md:text-[2.25rem] xl:text-[2.3rem] 3xl:text-[2.8rem] text-[2rem] tracking-wider">
@@ -38,7 +38,7 @@ export default function NavaBar() {
           src={me1}
           alt="profile"
           title="profile"
-          className="w-[50px] h-[50px] rounded-full cursor-pointer"
+          className="w-[50px] h-[50px] rounded-full cursor-pointer "
         />
       </div>
 

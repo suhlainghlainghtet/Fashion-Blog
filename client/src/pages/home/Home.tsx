@@ -4,8 +4,8 @@ import Posts from "../../components/posts/Posts";
 const Home = () => {
   return (
     <div
-      className="pt-[6rem] pb-[3rem] sm:pt-[7.2rem] md:pt-[7.5rem]
-     xl:pt-[8.5rem] 3xl:pt-[9.5rem] grid gap-y-6"
+      className="pt-[1.5rem] pb-[3rem] md:pt-[3rem] lg:pt-[4.5rem]
+      grid gap-y-6"
     >
       <Hero />
       <Posts />

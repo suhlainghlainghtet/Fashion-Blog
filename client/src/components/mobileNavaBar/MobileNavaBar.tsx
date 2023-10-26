@@ -34,7 +34,7 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
             : "fixed  left-[-100%] ease-in-out duration-200  "
         }
       >
-        <div className="absolute left-[4] bg-pure-orange w-full px-4 py-4 cursor-pointer ">
+        <div className="absolute left-[4] bg-pure-orange w-full px-4 360:py-4 py-3 cursor-pointer ">
           <img
             src={me1}
             alt="profile"
@@ -50,26 +50,29 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
           className="ri-close-fill  text-[2.3rem] top-3 text-dark-blue cursor-pointer absolute right-[5%]"
         ></i>
 
-        <ul className=" flex flex-col gap-[1.6rem] px-5 text-dark-blue font-navItemsForfont uppercase text-lg cursor-pointer pt-[10rem]">
-          <span className="flex gap-2 border-b-2 pb-4 w-full">
-            <i className="ri-home-fill text-2xl"></i> <li>home</li>
+        <ul
+          className=" flex flex-col 360:gap-y-[1.6rem] gap-y-[1rem] px-5 text-dark-blue
+         font-navItemsForfont uppercase text-lg cursor-pointer pt-[9rem] 360:pt-[10rem]"
+        >
+          <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
+            <i className="ri-home-fill text-xl"></i> <li>home</li>
           </span>
 
-          <span className="flex gap-2 border-b-2 pb-4 w-full">
-            <i className="ri-group-fill text-2xl"></i>
+          <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
+            <i className="ri-group-fill text-xl"></i>
             <li>about</li>
           </span>
 
-          <span className="flex gap-2 border-b-2 pb-4 w-full">
-            <i className="ri-contacts-book-2-fill text-2xl"></i>
+          <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
+            <i className="ri-contacts-book-2-fill text-xl"></i>
             <li>contact</li>
           </span>
-          <span className="flex gap-2 border-b-2 pb-4 w-full">
-            <i className="ri-pencil-fill text-2xl"></i>
+          <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
+            <i className="ri-pencil-fill text-xl"></i>
             <li>write</li>
           </span>
-          <span className="flex gap-2 border-b-2 pb-4 w-full">
-            <i className="ri-logout-box-r-fill text-2xl"></i> <li>logout</li>
+          <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
+            <i className="ri-logout-box-r-fill text-xl"></i> <li>logout</li>
           </span>
         </ul>
       </div>
