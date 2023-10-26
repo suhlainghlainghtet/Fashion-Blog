@@ -4,13 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        319: "319px",
-        359: "359px",
-        374: "374px",
-        389: "389px",
-        392: "392px",
-        410: "410px",
-        413: "413px",
+        360: "360px",
         sm: "640px",
         md: "768px",
         lg: "968px",
@@ -23,7 +17,7 @@ export default {
         "pure-orange": "#ff9b00",
         "dark-blue": "#1C1259",
         "light-gray": "#CACAEA",
-        romantic: "#FFD2BC ",
+        romantic: "#FFD2BD ",
         "dark-gray": "#444",
       },
       fontFamily: {

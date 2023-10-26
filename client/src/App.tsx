@@ -1,8 +1,8 @@
 import "./App.css";
 import NavaBar from "./components/navaBar/NavaBar";
-import CreatePost from "./pages/write/CreatePost";
+import Logout from "./pages/logout/Logout";
+// import CreatePost from "./pages/write/CreatePost";
 // import SinglePost from "./components/singlePost/SinglePost";
-// import Home from "./pages/home/Home";
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       <NavaBar />
       {/* <Home /> */}
       {/* <SinglePost /> */}
-      <CreatePost />
+      {/* <CreatePost /> */}
+      <Logout />
     </>
   );
 }

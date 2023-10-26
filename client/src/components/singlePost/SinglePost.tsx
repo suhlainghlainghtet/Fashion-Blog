@@ -2,7 +2,7 @@ import cardImg7 from "../../assets/cardImg7.jpg";
 import AboutMe from "../right/AboutMe";
 const SinglePost = () => {
   return (
-    <div className="pt-[5rem] pb-[3rem] md:pt-[6rem] lg:pt-[6.8rem] mx-[0.5rem] md:mx-[1rem] 3xl:mx-[2rem] grid gap-y-6 md:gap-x-7 grid-cols-1 md:grid-cols-3">
+    <div className="pt-[1.5rem] pb-[3rem] md:pt-[2.3rem] lg:pt-[2.5rem] mx-[0.5rem] md:mx-[1rem] 3xl:mx-[2rem] grid gap-y-6 md:gap-x-7 grid-cols-1 md:grid-cols-3">
       {/* =================Left=================== */}
       <div className="md:col-span-2">
         <img
