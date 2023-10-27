@@ -1,6 +1,6 @@
 import "./App.css";
 import NavaBar from "./components/navaBar/NavaBar";
-import SignIn from "./pages/signIn/SignIn";
+import SignOut from "./pages/signOut/SignOut";
 // import SinglePost from "./components/singlePost/SinglePost";
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
       {/* <Home /> */}
       {/* <SinglePost /> */}
       {/* <CreatePost /> */}
-      <SignIn />
+      <SignOut />
+      {/* <SignIn /> */}
     </>
   );
 }

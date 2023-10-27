@@ -49,13 +49,14 @@ const SignIn = () => {
             Sign in
           </button>
         </div>
-        <div className="flex gap-x-1 justify-center">
-          <p className="text-dark-blue font-bold text-[14px] select-none">
+        <div className="flex gap-x-2 justify-center items-center">
+          <p className="text-dark-blue font-bold text-[14px] 360:text-[16px] select-none">
             Don't have an account?
           </p>
           <a
             href="#"
-            className=" text-blue-900 border-b-2 text-[14px] border-blue-900"
+            className=" py-[8px] lg:py-[10px] lg:px-[18px] px-[17px] bg-pure-orange text-dark-blue font-bold cursor-pointer rounded-lg
+            text-[0.899rem] xl:text-[0.998rem]"
           >
             Sing Up
           </a>
