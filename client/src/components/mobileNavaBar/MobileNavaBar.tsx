@@ -14,12 +14,12 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
     <div className="block md:hidden w-full">
       <div className=" w-full">
         <div className="flex justify-between w-[100%] items-center px-4">
-          <div className="flex items-center justify-start gap-5">
+          <div className="flex items-center justify-start gap-5 ">
             <i
               className="ri-menu-fill text-[2rem] text-dark-blue cursor-pointer"
               onClick={openNavBarFormobile}
             ></i>
-            <h1 className="text-pure-orange pb-2 text-center font-fontforWebbly cursor-default font-bold text-[2.2rem] tracking-wider">
+            <h1 className="text-pure-orange  pb-2 text-center font-fontforWebbly cursor-default font-bold text-[2.2rem] tracking-wider">
               webbly
             </h1>
           </div>
