@@ -1,4 +1,4 @@
-import me1 from "../../assets/me1.jpg";
+import cardImg2 from "../../assets/cardImg2.jpg";
 interface Prop {
   open: boolean;
   setOpen: (value: boolean) => void;
@@ -36,12 +36,22 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
       >
         <div className="absolute left-[4] bg-pure-orange w-full px-4 360:py-4 py-3 cursor-pointer ">
           <img
-            src={me1}
+            src={cardImg2}
             alt="profile"
             title="profile"
-            className="w-[65px] h-[65px] rounded-full mb-1"
+            className="w-[65px] h-[65px] rounded-full border-[3px] border-light-gray mb-1 "
           />
-          <h2 className="text-2xl tracking-wide font-navItemsForfont font-semibold text-dark-blue">
+          <div
+            className="w-[27px] h-[27px] border-[1px] border-light-gray
+           absolute left-[3.5rem] bottom-[3.6rem] bg-dark-blue rounded-full cursor-pointer"
+          >
+            <i
+              className="ri-pencil-fill 
+           text-pure-orange text-[1.2rem] absolute 
+           top-[0rem] left-[4px]"
+            ></i>
+          </div>
+          <h2 className="text-2xl mt-3 tracking-wide font-navItemsForfont font-semibold text-dark-blue">
             Smiling
           </h2>
         </div>
