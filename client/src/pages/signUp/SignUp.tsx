@@ -1,5 +1,5 @@
-import "./signOut.css";
-const SignOut = () => {
+import "./signUp.css";
+const SignUp = () => {
   return (
     <div className=" 360:pt-0 bg_img flex flex-col justify-center items-center ">
       <span
@@ -85,4 +85,4 @@ const SignOut = () => {
     </div>
   );
 };
-export default SignOut;
+export default SignUp;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cardImg2 from "../../assets/cardImg2.jpg";
 interface Prop {
   open: boolean;
@@ -47,8 +48,7 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
           >
             <i
               className="ri-pencil-fill 
-           text-pure-orange text-[1.2rem] absolute 
-           top-[0rem] left-[4px]"
+           text-pure-orange text-[18px] grid place-items-center"
             ></i>
           </div>
           <h2 className="text-2xl mt-3 tracking-wide font-navItemsForfont font-semibold text-dark-blue">
@@ -65,21 +65,30 @@ const MobileNavaBar = ({ open, setOpen }: Prop) => {
          font-navItemsForfont uppercase text-lg cursor-pointer pt-[9rem] 360:pt-[10rem]"
         >
           <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
-            <i className="ri-home-fill text-xl"></i> <li>home</li>
+            <i className="ri-home-fill text-xl"></i>
+            <li>
+              <Link to="/">home</Link>
+            </li>
           </span>
 
           <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
             <i className="ri-group-fill text-xl"></i>
-            <li>about</li>
+            <li>
+              <Link to="/about">about</Link>
+            </li>
           </span>
 
           <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
             <i className="ri-contacts-book-2-fill text-xl"></i>
-            <li>contact</li>
+            <li>
+              <Link to="/write">write</Link>
+            </li>
           </span>
           <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
             <i className="ri-pencil-fill text-xl"></i>
-            <li>write</li>
+            <li>
+              <Link to="/contact">contact</Link>
+            </li>
           </span>
           <span className="flex gap-2 border-b-2 pb-3 360:pb-4 w-full">
             <i className="ri-logout-box-r-fill text-xl"></i> <li>logout</li>
