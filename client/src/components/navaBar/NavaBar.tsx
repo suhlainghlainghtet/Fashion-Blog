@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
 import me1 from "../../assets/me1.jpg";
 import MobileNavaBar from "../mobileNavaBar/MobileNavaBar";
@@ -6,6 +7,7 @@ import "./navaBar.css";
 export default function NavaBar() {
   const [open, setOpen] = useState<boolean>(false);
   const [scroll, setScroll] = useState(false);
+  const user = true;
 
   // ==========Change Background Header==========
   useEffect(() => {
@@ -26,20 +28,46 @@ export default function NavaBar() {
         webbly
       </h1>
       <ul className="hidden md:flex gap-4 lg:gap-6 md:gap-5 xl:gap-7 2xl:gap-9 4xl:gap-11 font-navItemsForfont uppercase text-md md:text-lg 2xl:text-xl 3xl:text-[1.4rem] cursor-pointer text-dark-blue">
-        <li>home</li>
-        <li>about</li>
-        <li>contact</li>
-        <li>write</li>
+        <li>
+          <Link to="/">home</Link>
+        </li>
+        <li>
+          <Link to="/about">about</Link>
+        </li>
+        <li>
+          <li>
+            <Link to="/write">write</Link>
+          </li>
+        </li>
+        <li>
+          <li>
+            <Link to="/contact">contact</Link>
+          </li>
+        </li>
         <li>logout</li>
       </ul>
       <div className="hidden md:flex items-center gap-2 mt-1 mb-1">
+        {user ? (
+          <Link to="/settings">
+            <img
+              src={me1}
+              alt="profile"
+              title="profile"
+              className="w-[50px] h-[50px] rounded-full cursor-pointer "
+            />
+          </Link>
+        ) : (
+          <Link to="/signup">
+            <a
+              href="#"
+              className=" py-[8px] lg:py-[10px] lg:px-[18px] px-[17px] bg-pure-orange text-dark-blue font-bold cursor-pointer rounded-lg
+            text-[0.899rem] xl:text-[0.998rem]"
+            >
+              Sing Up
+            </a>
+          </Link>
+        )}
         <i className="ri-search-line text-2xl text-dark-blue cursor-pointer"></i>
-        <img
-          src={me1}
-          alt="profile"
-          title="profile"
-          className="w-[50px] h-[50px] rounded-full cursor-pointer "
-        />
       </div>
 
       {/* =============For mobile=============== */}
