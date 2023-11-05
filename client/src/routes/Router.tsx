@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavaBar from "../components/navaBar/NavaBar";
 import SinglePost from "../components/singlePost/SinglePost";
+import About from "../pages/about/About";
 import Home from "../pages/home/Home";
 import Settings from "../pages/settings/Settings";
 import SignIn from "../pages/signIn/SignIn";
@@ -19,6 +20,7 @@ export default function Router() {
           <Route path="/signup" Component={SignUp} />
         )}
         <Route path="/posts/:postId" Component={user ? SinglePost : SignUp} />
+        <Route path="/about" Component={user ? About : SignUp} />
         <Route path="/write" Component={user ? CreatePost : SignUp} />
         <Route path="/settings" Component={user ? Settings : SignUp} />
       </Routes>

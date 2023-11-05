@@ -1,8 +1,8 @@
 import "../posts/posts.css";
 const HomeFooter = () => {
   return (
-    <div className="bg-light-gray mt-[1.5rem] pt-[1.3rem]  ">
-      <div className=" gap-y-4 sm:gap-x-3 px-[0.5rem] md:px-[1rem]  flex sm:justify-evenly flex-col sm:flex-row  mb-3">
+    <div className="bg-light-gray mt-[1.5rem] pt-[1.3rem] ">
+      <div className=" gap-y-4  sm:gap-x-3 px-[0.5rem] md:px-[1rem]  flex sm:justify-evenly flex-col sm:flex-row  mb-3">
         <div>
           <h3 className="text-[1rem] 3xl:text-[1.2rem] font-[600] font-navItemsForfont text-dark-blue mb-1 3xl:mb-2">
             Webbly Fashion Blog
@@ -29,22 +29,24 @@ const HomeFooter = () => {
           </div>
           <div className="flex gap-x-1">
             <span className="cursor-pointer social_animation">
-              <i className="ri-facebook-circle-fill text-[18px]"></i>
+              <i className="ri-facebook-circle-fill text-[18px] text-dark-blue"></i>
             </span>
             <span className="cursor-pointer social_animation">
-              <i className="ri-instagram-fill text-[18px]"></i>
+              <i className="ri-instagram-fill text-[18px] text-dark-blue"></i>
             </span>
             <span className="cursor-pointer social_animation">
-              <i className="ri-pinterest-fill text-[18px]"></i>
+              <i className="ri-pinterest-fill text-[18px] text-dark-blue"></i>
             </span>
             <span className="cursor-pointer social_animation">
-              <i className="ri-twitter-fill text-[18px]"></i>
+              <i className="ri-twitter-fill text-[18px] text-dark-blue"></i>
             </span>
           </div>
         </div>
       </div>
-      <div className="bg-dark-blue text-white text-center py-1 sm:flex sm:justify-around sm:items-center">
-        <p className="text-[11px] mb-1">&copy;2023 All Rights Reserved.</p>
+      <div className="bg-dark-blue  text-white text-center py-1 sm:py-3 sm:flex sm:justify-around sm:items-center">
+        <p className="text-[11px] mb-1 sm:mb-0">
+          &copy;2023 All Rights Reserved.
+        </p>
         <p className="text-[11px]">Webbly Fashion Blog</p>
       </div>
     </div>
