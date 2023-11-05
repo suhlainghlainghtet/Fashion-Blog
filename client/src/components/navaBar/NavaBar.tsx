@@ -35,14 +35,10 @@ export default function NavaBar() {
           <Link to="/about">about</Link>
         </li>
         <li>
-          <li>
-            <Link to="/write">write</Link>
-          </li>
+          <Link to="/write">write</Link>
         </li>
         <li>
-          <li>
-            <Link to="/contact">contact</Link>
-          </li>
+          <Link to="/contact">contact</Link>
         </li>
         <li>logout</li>
       </ul>
