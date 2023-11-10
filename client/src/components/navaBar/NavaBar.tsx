@@ -6,8 +6,14 @@ import MobileNavaBar from "../mobileNavaBar/MobileNavaBar";
 import "./navaBar.css";
 export default function NavaBar() {
   const [open, setOpen] = useState<boolean>(false);
-  const [scroll, setScroll] = useState(false);
+  const [scroll, setScroll] = useState<boolean>(false);
+  const [activeNavItem, setActiveNavItem] = useState<null | string>("home");
   const user = true;
+
+  // ===============Active Nava Item============
+  const handleActiveNavItemClick = (item: string) => {
+    setActiveNavItem(item);
+  };
 
   // ==========Change Background Header==========
   useEffect(() => {
@@ -28,18 +34,38 @@ export default function NavaBar() {
         webbly
       </h1>
       <ul className="hidden md:flex gap-4 lg:gap-6 md:gap-5 xl:gap-7 2xl:gap-9 4xl:gap-11 font-navItemsForfont uppercase text-md md:text-lg 2xl:text-xl 3xl:text-[1.4rem] cursor-pointer text-dark-blue">
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/about">about</Link>
-        </li>
-        <li>
-          <Link to="/write">write</Link>
-        </li>
-        <li>
-          <Link to="/contact">contact</Link>
-        </li>
+        <Link to="/">
+          <li
+            className={activeNavItem === "home" ? "active" : ""}
+            onClick={() => handleActiveNavItemClick("home")}
+          >
+            home
+          </li>
+        </Link>
+        <Link to="/about">
+          <li
+            className={activeNavItem === "about" ? "active" : ""}
+            onClick={() => handleActiveNavItemClick("about")}
+          >
+            about
+          </li>
+        </Link>
+        <Link to="/write">
+          <li
+            className={activeNavItem === "write" ? "active" : ""}
+            onClick={() => handleActiveNavItemClick("write")}
+          >
+            write
+          </li>
+        </Link>
+        <Link to="/contact">
+          <li
+            className={activeNavItem === "contact" ? "active" : ""}
+            onClick={() => handleActiveNavItemClick("contact")}
+          >
+            contact
+          </li>
+        </Link>
         <li>logout</li>
       </ul>
       <div className="hidden md:flex items-center gap-2 mt-1 mb-1">
@@ -67,7 +93,12 @@ export default function NavaBar() {
       </div>
 
       {/* =============For mobile=============== */}
-      <MobileNavaBar open={open} setOpen={setOpen} />
+      <MobileNavaBar
+        open={open}
+        setOpen={setOpen}
+        activeNavItem={activeNavItem}
+        setActiveNavItem={setActiveNavItem}
+      />
     </div>
   );
 }

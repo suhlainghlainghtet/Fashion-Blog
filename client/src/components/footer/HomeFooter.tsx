@@ -28,18 +28,34 @@ const HomeFooter = () => {
             </p>
           </div>
           <div className="flex gap-x-1">
-            <span className="cursor-pointer social_animation">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              className="cursor-pointer social_animation"
+            >
               <i className="ri-facebook-circle-fill text-[18px] text-dark-blue"></i>
-            </span>
-            <span className="cursor-pointer social_animation">
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              className="cursor-pointer social_animation"
+            >
               <i className="ri-instagram-fill text-[18px] text-dark-blue"></i>
-            </span>
-            <span className="cursor-pointer social_animation">
+            </a>
+            <a
+              href="https://www.pinterest.com"
+              target="_blank"
+              className="cursor-pointer social_animation"
+            >
               <i className="ri-pinterest-fill text-[18px] text-dark-blue"></i>
-            </span>
-            <span className="cursor-pointer social_animation">
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              className="cursor-pointer social_animation"
+            >
               <i className="ri-twitter-fill text-[18px] text-dark-blue"></i>
-            </span>
+            </a>
           </div>
         </div>
       </div>

@@ -1,3 +1,6 @@
 .box_shadow {
   box-shadow: 5px 0px 20px rgba(180, 173, 173, 0.3);
 }
+.active {
+  color: #ff9b00;
+}
