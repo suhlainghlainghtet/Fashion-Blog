@@ -1,27 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "remixicon/fonts/remixicon.css";
-import me1 from "../../assets/me1.jpg";
+import profile from "../../assets/profile.jpg";
+import { UseBlogWebAppContext } from "../../context/BlogAppContext";
 import MobileNavaBar from "../mobileNavaBar/MobileNavaBar";
 import "./navaBar.css";
 export default function NavaBar() {
   const [open, setOpen] = useState<boolean>(false);
   const [scroll, setScroll] = useState<boolean>(false);
   const [activeNavItem, setActiveNavItem] = useState<null | string>("home");
-  const user = true;
-
+  const { statusTextForSignUp, accessToken, user } = UseBlogWebAppContext();
   // ===============Active Nava Item============
   const handleActiveNavItemClick = (item: string) => {
     setActiveNavItem(item);
   };
-
   // ==========Change Background Header==========
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY >= 50);
     });
   }, [scroll]);
-
   return (
     <div
       className={
@@ -69,10 +67,11 @@ export default function NavaBar() {
         <li>logout</li>
       </ul>
       <div className="hidden md:flex items-center gap-2 mt-1 mb-1">
-        {user ? (
+        {statusTextForSignUp ||
+        (accessToken.length && user?.isArchived === false) ? (
           <Link to="/settings">
             <img
-              src={me1}
+              src={user?.userImage ? user.userImage : profile}
               alt="profile"
               title="profile"
               className="w-[50px] h-[50px] rounded-full cursor-pointer "
@@ -80,15 +79,15 @@ export default function NavaBar() {
           </Link>
         ) : (
           <Link to="/signup">
-            <a
-              href="#"
+            <button
               className=" py-[8px] lg:py-[10px] lg:px-[18px] px-[17px] bg-pure-orange text-dark-blue font-bold cursor-pointer rounded-lg
             text-[0.899rem] xl:text-[0.998rem]"
             >
               Sing Up
-            </a>
+            </button>
           </Link>
         )}
+
         <i className="ri-search-line text-2xl text-dark-blue cursor-pointer"></i>
       </div>
 
