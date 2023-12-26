@@ -5,26 +5,22 @@ import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
 import Home from "../pages/home/Home";
 import Settings from "../pages/settings/Settings";
-import SignIn from "../pages/signIn/SignIn";
-import SignUp from "../pages/signUp/SignUp";
+import SignIn from "../pages/signin/SignIn";
+import SignUp from "../pages/signup/SignUp";
 import CreatePost from "../pages/write/CreatePost";
 export default function Router() {
-  const user = true;
   return (
     <BrowserRouter>
       <NavaBar />
       <Routes>
-        <Route path="/" Component={user ? Home : SignUp} />
-        {user ? (
-          <Route path="/signin" Component={SignIn} />
-        ) : (
-          <Route path="/signup" Component={SignUp} />
-        )}
-        <Route path="/posts/:postId" Component={user ? SinglePost : SignUp} />
-        <Route path="/about" Component={user ? About : SignUp} />
-        <Route path="/write" Component={user ? CreatePost : SignUp} />
-        <Route path="/contact" Component={user ? Contact : SignUp} />
-        <Route path="/settings" Component={user ? Settings : SignUp} />
+        <Route path="/signin" Component={SignIn} />
+        <Route path="/signup" Component={SignUp} />
+        <Route path="/" Component={Home} />
+        <Route path="/posts/:postId" Component={SinglePost} />
+        <Route path="/about" Component={About} />
+        <Route path="/write" Component={CreatePost} />
+        <Route path="/contact" Component={Contact} />
+        <Route path="/settings" Component={Settings} />
       </Routes>
     </BrowserRouter>
   );

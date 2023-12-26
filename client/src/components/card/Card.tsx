@@ -4,8 +4,9 @@ interface Prop {
   image: string;
   title: string;
   alt: string;
+  description: string;
 }
-const Card = ({ image, title, alt }: Prop) => {
+const Card = ({ image, title, alt, description }: Prop) => {
   return (
     <div className="bg-white card_boxshadow rounded-[1.2rem] text-center sm:w-[75%] md:w-full 2xl:w-[90%]">
       <img src={image} alt={alt} title={title} className="h-[250px] w-full" />
@@ -18,16 +19,7 @@ const Card = ({ image, title, alt }: Prop) => {
           1 hour ago
         </span>
         <p className="margin_block text-[14px]  mb-5  text_overflow ">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-          pariatur voluptas voluptatum, maiores inventore placeat quidem qui vel
-          similique excepturi porro corrupti quo quia voluptate ad totam eveniet
-          deleniti nam? Lorem ipsum dolor, sit amet consectetur adipisicing
-          elit. Eius pariatur voluptas voluptatum, maiores inventore placeat
-          quidem qui vel similique excepturi porro corrupti quo quia voluptate
-          ad totam eveniet deleniti nam? Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Eius pariatur voluptas voluptatum, maiores inventore
-          placeat quidem qui vel similique excepturi porro corrupti quo quia
-          voluptate ad totam eveniet deleniti nam?
+          {description}
         </p>
         <Link to="/posts/:postId">
           <button
