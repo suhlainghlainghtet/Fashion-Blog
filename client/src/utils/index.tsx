@@ -26,6 +26,7 @@ export const creatingPostingDate = (updatedAt: string) => {
   const getYear = Number(currentDateFormat[2]);
   const getHours = currentDateTime.getHours();
   const getMinutes = currentDateTime.getMinutes();
+  console.log(typeof getHours);
 
   if (getMonth === month && getYear === year) {
     const dateForPost = getDate - date;
@@ -52,22 +53,22 @@ export const creatingPostingDate = (updatedAt: string) => {
       }
     } else {
       const minForPost = getMinutes - minutes;
-      if (getHours === hours) {
-        if (minForPost > 0 && minForPost < 60) {
-          return (
-            <span className=" font-[400] text-[16px] text-dark-blue italic">
-              {minForPost > 1
-                ? `${minForPost} mins ago`
-                : `${minForPost} min ago`}
-            </span>
-          );
-        } else {
-          return (
-            <span className=" font-[400] text-[16px] text-dark-blue italic">
-              1 min ago
-            </span>
-          );
-        }
+      console.log("isVaild.....", getHours);
+      console.log("isVaildhh.....", hours);
+      if (minForPost > 0 && minForPost < 60) {
+        return (
+          <span className=" font-[400] text-[16px] text-dark-blue italic">
+            {minForPost > 1
+              ? `${minForPost} mins ago`
+              : `${minForPost} min ago`}
+          </span>
+        );
+      } else if (minForPost === 0) {
+        return (
+          <span className=" font-[400] text-[16px] text-dark-blue italic">
+            1 min ago
+          </span>
+        );
       } else {
         const hoursForPost = getHours - hours;
         return (
