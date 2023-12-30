@@ -31,14 +31,16 @@ export const BlogAppProvider = ({ children }: any) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${config.apiUrl}/data`, {
-        headers: {
-          Authorization: `Bearer ${data.accessToken}`,
-        },
-      });
+      const response = await axios.get(
+        `${config.apiUrl}/${data.user?.id}/data`,
+        {
+          // headers: {
+          //   Authorization: `Bearer ${data.accessToken}`,
+          // },
+        }
+      );
       const dataFromDatabase = await response.data;
-      updateData({ ...data, user: data.user, blogPosts: dataFromDatabase });
-      console.log("data...", data);
+      updateData({ ...data, blogPosts: dataFromDatabase, user: data.user });
     } catch (error) {
       console.log("Error is...", error);
     }

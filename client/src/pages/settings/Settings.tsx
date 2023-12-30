@@ -5,6 +5,7 @@ import profile from "../../assets/profile.jpg";
 import "../../components/settingsForMobile/settingsForMobile.css";
 import { config } from "../../config/config";
 import { UseBlogWebAppContext } from "../../context/BlogAppContext";
+import { handleCreateImageUpload } from "../../utils";
 import "./settings.css";
 
 export default function Settings() {
@@ -45,12 +46,8 @@ export default function Settings() {
         const formDataToSend = new FormData();
         formDataToSend.append("file", file);
         formDataToSend.append("upload_preset", "ytmo583o");
-        const response = await axios.post(
-          `${config.uploadImageApiUrl}/image/upload`,
-          formDataToSend
-        );
-        const urlImage = response.data.url;
-        updateUser(userId, urlImage);
+        const imageUrl = await handleCreateImageUpload(formDataToSend);
+        updateUser(userId, imageUrl);
       } else {
         const responseData = await axios.get(
           `${config.apiUrl}/users/user-image/${userId}`
@@ -58,7 +55,6 @@ export default function Settings() {
         const imageUrl = responseData.data;
         updateUser(userId, imageUrl);
       }
-
       navigate("/");
     } catch (error) {
       console.log("Error", error);
