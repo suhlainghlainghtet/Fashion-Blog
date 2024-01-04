@@ -14,83 +14,77 @@ export const creatingPostingDate = (updatedAt: string) => {
   const dmy = Moment(updatedAt).format("DD-MM-YYYY");
   const dateArray = dmy.split("-");
   const timeArray = Moment(updatedAt).format("HH-mm-ss").split("-");
-  const date = Number(dateArray[0]);
+  const day = Number(dateArray[0]);
   const month = Number(dateArray[1]);
   const year = Number(dateArray[2]);
   const hours = Number(timeArray[0]);
   const minutes = Number(timeArray[1]);
   const currentDateTime = new Date();
   const currentDateFormat = currentDateTime.toLocaleDateString().split("/");
-  const getDate = Number(currentDateFormat[1]);
+  const getDay = Number(currentDateFormat[1]);
   const getMonth = Number(currentDateFormat[0]);
   const getYear = Number(currentDateFormat[2]);
   const getHours = currentDateTime.getHours();
   const getMinutes = currentDateTime.getMinutes();
-  console.log(typeof getHours);
 
-  if (getMonth === month && getYear === year) {
-    const dateForPost = getDate - date;
+  let addNum: number;
+  if (month === (9 || 4 || 6 || 11)) {
+    addNum = 30;
+  } else if (month === 2) {
+    addNum = 28;
+  } else {
+    addNum = 31;
+  }
 
-    if (dateForPost > 0 && dateForPost < 7) {
+  if (getMonth === month && getDay === day && getYear === year) {
+    if (hours < getHours && (getMinutes === minutes || minutes < getMinutes)) {
+      const hoursForPost = getHours - hours;
       return (
         <span className=" font-[400] text-[16px] text-dark-blue italic">
-          {dateForPost > 1
-            ? `${dateForPost} days ago`
-            : `${dateForPost} day ago`}
+          {hoursForPost > 1
+            ? `${hoursForPost} hours ago`
+            : `${hoursForPost} hour ago`}
         </span>
       );
-    } else if (dateForPost !== 0) {
-      const calculateWeeks = dateForPost / 7;
-      const weekForPost = Math.floor(calculateWeeks);
-      if (weekForPost < 4) {
-        return (
-          <span className=" font-[400] text-[16px] text-dark-blue italic">
-            {weekForPost > 1
-              ? `${weekForPost} weeks ago`
-              : `${weekForPost} week ago`}
-          </span>
-        );
-      }
+    } else if (getMinutes === minutes) {
+      return (
+        <span className=" font-[400] text-[16px] text-dark-blue italic">
+          1 min ago
+        </span>
+      );
     } else {
-      const minForPost = getMinutes - minutes;
-      console.log("isVaild.....", getHours);
-      console.log("isVaildhh.....", hours);
-      if (minForPost > 0 && minForPost < 60) {
-        return (
-          <span className=" font-[400] text-[16px] text-dark-blue italic">
-            {minForPost > 1
-              ? `${minForPost} mins ago`
-              : `${minForPost} min ago`}
-          </span>
-        );
-      } else if (minForPost === 0) {
-        return (
-          <span className=" font-[400] text-[16px] text-dark-blue italic">
-            1 min ago
-          </span>
-        );
-      } else {
-        const hoursForPost = getHours - hours;
-        return (
-          <span className=" font-[400] text-[16px] text-dark-blue italic">
-            {hoursForPost > 1
-              ? `${hoursForPost} hours ago`
-              : `${hoursForPost} hour ago`}
-          </span>
-        );
-      }
-    }
-  } else if (getMonth - month !== 0) {
-    if (getYear !== year && getMonth < month) {
-      const monthForPost = getMonth - month + 12;
+      const minutesForPost =
+        getMinutes < minutes ? getMinutes - minutes + 60 : getMinutes - minutes;
       return (
         <span className=" font-[400] text-[16px] text-dark-blue italic">
-          {monthForPost > 1
-            ? `${monthForPost} months ago`
-            : `${monthForPost} month ago`}
+          {minutesForPost > 1
+            ? `${minutesForPost} mins ago`
+            : `${minutesForPost} min ago`}
         </span>
       );
-    } else if (getYear === year && getMonth > month) {
+    }
+  } else if (getYear === year) {
+    const daysForPost =
+      getMonth === month ? getDay - day : getDay - day + addNum;
+    const calculateWeeks = daysForPost / 7;
+    const weekForPost = Math.floor(calculateWeeks);
+    if (daysForPost > 0 && daysForPost < 7) {
+      return (
+        <span className=" font-[400] text-[16px] text-dark-blue italic">
+          {daysForPost > 1
+            ? `${daysForPost} days ago`
+            : `${daysForPost} day ago`}
+        </span>
+      );
+    } else if (calculateWeeks !== 0 && weekForPost < 4) {
+      return (
+        <span className=" font-[400] text-[16px] text-dark-blue italic">
+          {weekForPost > 1
+            ? `${weekForPost} weeks ago`
+            : `${weekForPost} week ago`}
+        </span>
+      );
+    } else {
       const monthForPost = getMonth - month;
       return (
         <span className=" font-[400] text-[16px] text-dark-blue italic">
@@ -99,27 +93,67 @@ export const creatingPostingDate = (updatedAt: string) => {
             : `${monthForPost} month ago`}
         </span>
       );
-    } else {
-      const yearForPost = getYear - year;
+    }
+  } else {
+    const daysForPost =
+      getMonth === month ? getDay - day : getDay - day + addNum;
+    const calculateWeeks = daysForPost / 7;
+    const weekForPost = Math.floor(calculateWeeks);
+    const differenceMonth = getMonth - month + 12;
+
+    if (differenceMonth <= 1 && daysForPost > 0 && daysForPost < 7) {
       return (
         <span className=" font-[400] text-[16px] text-dark-blue italic">
-          {yearForPost > 1
-            ? `${yearForPost} years ago`
-            : `${yearForPost} year ago`}
+          {daysForPost > 1
+            ? `${daysForPost} days ago`
+            : `${daysForPost} day ago`}
         </span>
       );
+    } else if (
+      differenceMonth <= 1 &&
+      calculateWeeks !== 0 &&
+      weekForPost < 4
+    ) {
+      return (
+        <span className=" font-[400] text-[16px] text-dark-blue italic">
+          {weekForPost > 1
+            ? `${weekForPost} weeks ago`
+            : `${weekForPost} week ago`}
+        </span>
+      );
+    } else if (
+      differenceMonth !== 0 &&
+      getMonth - month + 12 !== 12 &&
+      getYear - year <= 1
+    ) {
+      const monthForPostForDifferentYear = getMonth - month + 12;
+      return (
+        <span className=" font-[400] text-[16px] text-dark-blue italic">
+          {monthForPostForDifferentYear > 1
+            ? `${monthForPostForDifferentYear} months ago`
+            : `${monthForPostForDifferentYear} month ago`}
+        </span>
+      );
+    } else {
+      if (getMonth === month || month < getMonth) {
+        const yearForPost = getYear - year;
+        return (
+          <span className=" font-[400] text-[16px] text-dark-blue italic">
+            {yearForPost > 1
+              ? `${yearForPost} years ago`
+              : `${yearForPost} year ago`}
+          </span>
+        );
+      } else {
+        const yearForPost = getYear - year - 1;
+        return (
+          <span className=" font-[400] text-[16px] text-dark-blue italic">
+            {yearForPost > 1
+              ? `${yearForPost} years ago`
+              : `${yearForPost} year ago`}
+          </span>
+        );
+      }
     }
-  } else if (getMonth - month === 0) {
-    return (
-      <span className=" font-[400] text-[16px] text-dark-blue italic">
-        1 year ago
-      </span>
-    );
-  } else {
-    return (
-      <span className=" font-[400] text-[16px] text-dark-blue italic">
-        1 min ago
-      </span>
-    );
   }
 };
